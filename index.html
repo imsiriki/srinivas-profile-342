@@ -1,0 +1,1439 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Siriki Srinivas | Senior Full-Stack Developer</title>
+
+  <meta
+    name="description"
+    content="Siriki Srinivas - Senior Full-Stack and Frontend Developer with 15+ years of experience in Angular, React, Next.js, Node.js and enterprise application development."
+  />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0b1022;
+      --card: rgba(17, 25, 50, 0.72);
+      --card-solid: #10172d;
+      --text: #f7f8fc;
+      --muted: #a9b2ca;
+      --line: rgba(255, 255, 255, 0.1);
+      --primary: #7c5cff;
+      --secondary: #20d6b5;
+      --pink: #f05ea9;
+      --glow: rgba(124, 92, 255, 0.3);
+      --max-width: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(124, 92, 255, 0.14), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(32, 214, 181, 0.08), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+      background-size: 55px 55px;
+      mask-image: linear-gradient(to bottom, black, transparent 70%);
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(92%, 1120px);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      background: rgba(7, 11, 27, 0.75);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+      border-radius: 18px;
+    }
+
+    .logo {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 0 80px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(124, 92, 255, 0.35);
+      border-radius: 100px;
+      color: #c5bbff;
+      background: rgba(124, 92, 255, 0.1);
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #20d6b5;
+      box-shadow: 0 0 14px #20d6b5;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 24px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        135deg,
+        #ffffff 20%,
+        #9f8cff 55%,
+        #45e0c4
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-description strong {
+      color: white;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--primary), #9f6dff);
+      box-shadow: 0 10px 30px var(--glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(124, 92, 255, 0.45);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 30px;
+      border-radius: 28px;
+      background:
+        linear-gradient(145deg, rgba(124, 92, 255, 0.12), transparent 50%),
+        var(--card);
+      border: 1px solid var(--line);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -90px;
+      bottom: -100px;
+      background: var(--primary);
+      filter: blur(90px);
+      opacity: 0.28;
+    }
+
+    .code-window {
+      position: relative;
+      z-index: 1;
+      background: #070b18;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .code-header {
+      display: flex;
+      gap: 7px;
+      padding: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .code-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff5f57;
+    }
+
+    .code-dot:nth-child(2) {
+      background: #febc2e;
+    }
+
+    .code-dot:nth-child(3) {
+      background: #28c840;
+    }
+
+    .code-content {
+      padding: 24px;
+      font-family: "Courier New", monospace;
+      color: #c9d1e5;
+      font-size: 0.88rem;
+      line-height: 2;
+    }
+
+    .purple { color: #a78bfa; }
+    .green { color: #34d399; }
+    .blue { color: #60a5fa; }
+    .pink { color: #f472b6; }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      color: white;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      display: block;
+      color: var(--secondary);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      letter-spacing: -2px;
+      line-height: 1.05;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 700px;
+      margin-top: 15px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .glass-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 30px;
+    }
+
+    .about-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 14px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+    }
+
+    .highlights {
+      margin-top: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .highlight {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+    }
+
+    .highlight-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(124, 92, 255, 0.15);
+      color: #b9aaff;
+      flex-shrink: 0;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .skill-card {
+      padding: 24px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.05),
+        rgba(255,255,255,0.015)
+      );
+      transition: 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(124, 92, 255, 0.55);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.22);
+    }
+
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    /* EXPERIENCE */
+
+    .experience-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-card {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 25px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--card);
+      transition: 0.3s ease;
+    }
+
+    .experience-card:hover {
+      border-color: rgba(124, 92, 255, 0.45);
+    }
+
+    .experience-period {
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .experience-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+
+    .company {
+      color: #c2b8ff;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .experience-card p {
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 100px;
+      background: rgba(124, 92, 255, 0.1);
+      border: 1px solid rgba(124, 92, 255, 0.2);
+      color: #c5bbff;
+      font-size: 0.75rem;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      position: relative;
+      min-height: 330px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 80% 10%, rgba(124,92,255,0.28), transparent 35%),
+        linear-gradient(145deg, #121a35, #080c19);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: 0.35s ease;
+    }
+
+    .project-card:nth-child(2) {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(32,214,181,0.22), transparent 35%),
+        linear-gradient(145deg, #101f30, #080c19);
+    }
+
+    .project-card:nth-child(3) {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(240,94,169,0.2), transparent 35%),
+        linear-gradient(145deg, #251128, #080c19);
+    }
+
+    .project-card:nth-child(4) {
+      background:
+        radial-gradient(circle at 30% 20%, rgba(96,165,250,0.2), transparent 35%),
+        linear-gradient(145deg, #101d35, #080c19);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .project-number {
+      position: absolute;
+      top: 25px;
+      right: 28px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .project-icon {
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.08);
+      font-size: 1.7rem;
+      margin-bottom: auto;
+    }
+
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    /* AI SECTION */
+
+    .ai-banner {
+      position: relative;
+      padding: 55px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(124, 92, 255, 0.3);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(124,92,255,0.35), transparent 28%),
+        radial-gradient(circle at 20% 80%, rgba(32,214,181,0.16), transparent 28%),
+        #0d1228;
+    }
+
+    .ai-banner h2 {
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      max-width: 760px;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .ai-banner p {
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 28px;
+    }
+
+    /* APPROACH */
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .approach-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+    }
+
+    .phase {
+      color: var(--secondary);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .approach-card h3 {
+      margin: 12px 0;
+      font-size: 1.35rem;
+    }
+
+    .approach-card p {
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      text-align: center;
+    }
+
+    .contact-box {
+      padding: 65px 25px;
+      border-radius: 32px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(124,92,255,0.28), transparent 35%),
+        var(--card);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      letter-spacing: -3px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 30px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0 50px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 25px;
+    }
+
+    /* SCROLL ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero {
+        padding-top: 150px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        padding: 12px 16px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        background: #0a1020;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .ai-banner,
+      .contact-box {
+        padding: 35px 22px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav class="navbar">
+    <a href="#home" class="logo">
+      Srinivas<span>.</span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Stack</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            Available for opportunities • Immediate Joiner
+          </div>
+
+          <h1>
+            Building
+            <span class="gradient-text">scalable digital experiences.</span>
+          </h1>
+
+          <p class="hero-description">
+            Hi, I'm <strong>Siriki Srinivas</strong> — a
+            <strong>Senior Full-Stack & Frontend Developer</strong>
+            with <strong>15+ years of experience</strong> building
+            scalable, enterprise-level web applications using
+            Angular, React.js, Next.js, Node.js, MongoDB, and modern
+            AI integrations.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              Explore My Work →
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              Let's Connect
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="hero-card reveal">
+
+          <div class="code-window">
+
+            <div class="code-header">
+              <span class="code-dot"></span>
+              <span class="code-dot"></span>
+              <span class="code-dot"></span>
+            </div>
+
+            <div class="code-content">
+              <div><span class="purple">const</span> developer = {</div>
+              <div>&nbsp;&nbsp;name: <span class="green">"Siriki Srinivas"</span>,</div>
+              <div>&nbsp;&nbsp;role: <span class="green">"Senior Developer"</span>,</div>
+              <div>&nbsp;&nbsp;experience: <span class="blue">"15+ Years"</span>,</div>
+              <div>&nbsp;&nbsp;company: <span class="green">"HCL Technologies"</span>,</div>
+              <div>&nbsp;&nbsp;skills: [</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"Angular"</span>,</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"React"</span>,</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"Next.js"</span>,</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"Node.js"</span>,</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"AI Integrations"</span></div>
+              <div>&nbsp;&nbsp;],</div>
+              <div>&nbsp;&nbsp;available: <span class="blue">true</span></div>
+              <div>};</div>
+            </div>
+
+          </div>
+
+          <div class="hero-stats">
+
+            <div class="stat">
+              <strong>15+</strong>
+              <span>Years Experience</span>
+            </div>
+
+            <div class="stat">
+              <strong>5</strong>
+              <span>Years Team Handling</span>
+            </div>
+
+            <div class="stat">
+              <strong>∞</strong>
+              <span>Continuous Learning</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">01 / About Me</span>
+          <h2>Turning complex requirements into <span class="gradient-text">simple digital experiences.</span></h2>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="glass-card about-card reveal">
+
+            <h3>Senior Developer. Problem Solver. Team Leader.</h3>
+
+            <p>
+              I am a technology professional with 15+ years of experience
+              in frontend and full-stack web development. I specialize in
+              designing scalable applications, reusable UI architectures,
+              responsive interfaces, and high-performance web solutions.
+            </p>
+
+            <div class="highlights">
+
+              <div class="highlight">
+                <div class="highlight-icon">⚡</div>
+                <div>
+                  <strong>Performance Focused</strong>
+                  <p>Building optimized and maintainable applications with excellent user experiences.</p>
+                </div>
+              </div>
+
+              <div class="highlight">
+                <div class="highlight-icon">◈</div>
+                <div>
+                  <strong>Enterprise Experience</strong>
+                  <p>Experience working on complex enterprise-level applications and scalable UI systems.</p>
+                </div>
+              </div>
+
+              <div class="highlight">
+                <div class="highlight-icon">◉</div>
+                <div>
+                  <strong>Technical Leadership</strong>
+                  <p>5 years of experience supporting and guiding development teams.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="glass-card about-card reveal">
+
+            <span class="section-label">Currently</span>
+
+            <h3>HCL Technologies</h3>
+
+            <p>
+              Currently contributing as an experienced technology professional,
+              delivering modern web applications and enterprise solutions.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Angular</span>
+              <span class="tag">React.js</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">Micro Frontends</span>
+              <span class="tag">AI Integration</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">02 / Tech Stack</span>
+          <h2>The technologies I use to <span class="gradient-text">build and scale.</span></h2>
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">🅰️</div>
+            <h3>Angular</h3>
+            <p>Angular 6 through modern Angular versions, RxJS, NgRx and Angular Material.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">⚛️</div>
+            <h3>React.js</h3>
+            <p>Component-driven applications, reusable architecture and modern React development.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">▲</div>
+            <h3>Next.js</h3>
+            <p>Modern web applications with optimized rendering and scalable frontend architecture.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">🟢</div>
+            <h3>Node.js</h3>
+            <p>Backend services, Express.js, REST APIs and server-side integrations.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">🍃</div>
+            <h3>MongoDB</h3>
+            <p>Flexible database design and integration for modern full-stack applications.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">🧩</div>
+            <h3>Micro Frontends</h3>
+            <p>Modular frontend architecture designed for large and scalable enterprise applications.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">🎨</div>
+            <h3>UI Engineering</h3>
+            <p>HTML5, CSS3, SCSS, Bootstrap, Tailwind CSS, PrimeNG and responsive design.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">🤖</div>
+            <h3>AI Integrations</h3>
+            <p>Integrating AI-powered capabilities using OpenAI, Gemini and communication APIs.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">03 / Experience</span>
+          <h2>Building technology with <span class="gradient-text">experience and purpose.</span></h2>
+        </div>
+
+        <div class="experience-list">
+
+          <article class="experience-card reveal">
+
+            <div class="experience-period">
+              Current Role
+            </div>
+
+            <div>
+
+              <h3>Senior Full-Stack / Frontend Developer</h3>
+
+              <div class="company">HCL Technologies</div>
+
+              <p>
+                Contributing to the development of scalable enterprise applications
+                with a strong focus on frontend architecture, reusable components,
+                responsive user interfaces, performance optimization, API integration,
+                and modern web technologies.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Angular</span>
+                <span class="tag">React.js</span>
+                <span class="tag">Next.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">REST APIs</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="experience-card reveal">
+
+            <div class="experience-period">
+              15+ Years
+            </div>
+
+            <div>
+
+              <h3>Frontend & Web Application Development</h3>
+
+              <div class="company">Enterprise Application Experience</div>
+
+              <p>
+                Extensive experience across the complete frontend development lifecycle,
+                including requirement analysis, architecture, development, debugging,
+                optimization, implementation, and technical leadership.
+              </p>
+
+              <div class="tags">
+                <span class="tag">UI Architecture</span>
+                <span class="tag">Team Leadership</span>
+                <span class="tag">Performance</span>
+                <span class="tag">Responsive Design</span>
+                <span class="tag">Enterprise Applications</span>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">04 / Areas of Expertise</span>
+          <h2>What I love <span class="gradient-text">building.</span></h2>
+
+          <p>
+            Selected areas that represent my experience in enterprise web development,
+            frontend architecture, full-stack applications and AI integration.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card reveal">
+
+            <span class="project-number">01</span>
+
+            <div class="project-icon">🏢</div>
+
+            <h3>Enterprise Web Applications</h3>
+
+            <p>
+              Scalable, maintainable applications built with modern frontend architecture,
+              reusable components and enterprise development practices.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Angular</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Micro Frontends</span>
+            </div>
+
+          </article>
+
+
+          <article class="project-card reveal">
+
+            <span class="project-number">02</span>
+
+            <div class="project-icon">⚛️</div>
+
+            <h3>Modern React & Next.js Apps</h3>
+
+            <p>
+              High-performance applications focused on clean architecture,
+              reusable components and excellent user experiences.
+            </p>
+
+            <div class="tags">
+              <span class="tag">React.js</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">JavaScript</span>
+            </div>
+
+          </article>
+
+
+          <article class="project-card reveal">
+
+            <span class="project-number">03</span>
+
+            <div class="project-icon">⚙️</div>
+
+            <h3>Full-Stack Solutions</h3>
+
+            <p>
+              End-to-end applications integrating frontend interfaces,
+              Node.js services, REST APIs and MongoDB databases.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">MongoDB</span>
+            </div>
+
+          </article>
+
+
+          <article class="project-card reveal">
+
+            <span class="project-number">04</span>
+
+            <div class="project-icon">🤖</div>
+
+            <h3>AI-Powered Integrations</h3>
+
+            <p>
+              Exploring and integrating intelligent capabilities into web applications
+              using modern AI platforms and communication services.
+            </p>
+
+            <div class="tags">
+              <span class="tag">OpenAI</span>
+              <span class="tag">Gemini</span>
+              <span class="tag">Twilio</span>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- AI -->
+
+    <section>
+      <div class="container">
+
+        <div class="ai-banner reveal">
+
+          <span class="section-label">05 / AI + Web</span>
+
+          <h2>
+            Exploring the future of web applications with
+            <span class="gradient-text">AI-powered experiences.</span>
+          </h2>
+
+          <p>
+            I am actively expanding my expertise in AI and modern application
+            development, including integrations with OpenAI, Gemini and other APIs
+            to create smarter, more interactive digital experiences.
+          </p>
+
+          <div class="tags">
+            <span class="tag">OpenAI</span>
+            <span class="tag">Gemini</span>
+            <span class="tag">Prompt Engineering</span>
+            <span class="tag">AI APIs</span>
+            <span class="tag">Twilio</span>
+            <span class="tag">Automation</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- APPROACH -->
+
+    <section>
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">06 / My Approach</span>
+          <h2>From idea to <span class="gradient-text">production.</span></h2>
+        </div>
+
+        <div class="approach-grid">
+
+          <div class="approach-card reveal">
+            <div class="phase">Phase 01</div>
+            <h3>Analyze & Architect</h3>
+            <p>
+              Understanding requirements, identifying challenges and designing
+              a scalable, maintainable technical approach.
+            </p>
+          </div>
+
+          <div class="approach-card reveal">
+            <div class="phase">Phase 02</div>
+            <h3>Build & Optimize</h3>
+            <p>
+              Developing reusable components, integrating APIs and focusing
+              on responsive design, quality and performance.
+            </p>
+          </div>
+
+          <div class="approach-card reveal">
+            <div class="phase">Phase 03</div>
+            <h3>Test & Deliver</h3>
+            <p>
+              Ensuring quality through testing, debugging, code standards,
+              collaboration and continuous improvement.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+
+        <div class="contact-box reveal">
+
+          <span class="section-label">07 / Contact</span>
+
+          <h2>
+            Let's build something
+            <span class="gradient-text">great together.</span>
+          </h2>
+
+          <p>
+            I am currently available for new opportunities and can join immediately.
+            If you are looking for an experienced Senior Frontend or Full-Stack Developer,
+            let's connect.
+          </p>
+
+          <div class="contact-links">
+
+            <a
+              href="mailto:php342@gmail.com"
+              class="btn btn-primary"
+            >
+              ✉ Email Me
+            </a>
+
+            <a
+              href="tel:+919030220351"
+              class="btn btn-secondary"
+            >
+              ☎ +91 9030220351
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container footer-content">
+
+      <p>
+        © <span id="year"></span> Siriki Srinivas. All rights reserved.
+      </p>
+
+      <p>
+        Senior Full-Stack Developer • Senior Frontend Developer • Immediate Joiner
+      </p>
+
+    </div>
+  </footer>
+
+
+  <script>
+
+    // Mobile Navigation
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
+
+    // Scroll Reveal Animation
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealOnScroll = () => {
+      revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight - 80) {
+          element.classList.add("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+
+
+    // Dynamic Copyright Year
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
+```
